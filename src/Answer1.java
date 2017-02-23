@@ -11,7 +11,7 @@ import java.util.*;
 public class Answer1 {
 
    /** maximal array length */
-   static final int MAX_SIZE = 512000;
+   static final int MAX_SIZE = 50000;
 
    /** number of competition rounds */
    static final int NUMBER_OF_ROUNDS = 4;
@@ -109,34 +109,25 @@ public class Answer1 {
     */
    public static void binaryInsertionSort(int[] a) {
       // TODO!!! Your method here!
-	
-	       int tmp;
-	       int l, r, m;
+	        
+	       int nValue, j;
+	     
 	   
-	        for (int i = 1; i < a.length; i++) {
-	              tmp = a [i] ;
-	              l = 0;
-	              r = 0;
-	              while (l<r){
-	                   m=(l+r)/2;
-	                  if (tmp>=a[m])
-	                      l=r+1;
-	                  else
-	                       r=m;
+	        for (int i = +1; i < a.length; i++) {
+	              nValue = a [i] ;
+	              nValue = a[i];
+	              j = i;
+	              while (j > 0 && a [j - 1] > nValue){
+	               a[j] = a[j -1];
+	               j--;
 	              }
-	              for (int j = i; j > l; --j)
-	            	swap (a, j - 1, j);
+	              a[j]= nValue;
+	        }
 	            	  
 	        
 	            
    }
-}
-   private static void swap(int a[], int i, int j) {
-	// TODO Auto-generated method stub
-	int k = a[i];
-	a[i]=a[j];
-	a[j]=k;
-}
+
 
 /**
     * Sort a part of the array using quicksort method.
