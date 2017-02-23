@@ -8,7 +8,7 @@ import java.util.*;
  * @version 3.0
  * @since 1.6
  */
-public class IntSorting {
+public class Answer1 {
 
    /** maximal array length */
    static final int MAX_SIZE = 512000;
@@ -109,35 +109,22 @@ public class IntSorting {
     */
    public static void binaryInsertionSort(int[] a) {
       // TODO!!! Your method here!
+	
 	   
-	   {
-		    int i, m;
-		    int l, r, tmp;
-
-		    for (i = 0; i < a.length; i++) {
-		        l = 0; r = i;
-		        m = i / 2;
-
-		        do {
-		            if (a[i] > a[m]) {
-		                l = m + 1;
-		            } else if (a[i] < a[m]) {
-		                r = m;
-		            } else
-		                break;
-
-		            m = l + ((r - l) / 2);
-		        } while (l < r);
-		 
-		        if (m < i) {
-		            tmp = a[i];
-		            memmove (a + m + 1, a + m, sizeof (int) * (i - m));
-		            a[m] = tmp;
-		        }
-		    }
-
+	        for (int i = 1; i < a.length; i++) {
+	               int x = a[i];
+	                
+	               
+	               int j = Math.abs(a.length + 1);
+	                
+	               
+	               System.arraycopy(a, j, a, j+1, i-j);
+	                
+	               
+	               a[j] = x;
+	        
    }
-
+}
    /**
     * Sort a part of the array using quicksort method.
     *
