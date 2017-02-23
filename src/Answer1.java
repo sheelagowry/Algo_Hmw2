@@ -113,9 +113,9 @@ public class Answer1 {
 	       int nValue, j;
 	     
 	   
-	        for (int i = +1; i < a.length; i++) {
-	              nValue = a [i] ;
-	              nValue = a[i];
+	        for (int i = 1; i < a.length; i++) {
+	              nValue = a[i] ;
+	            //  nValue = a[i];
 	              j = i;
 	              while (j > 0 && a [j - 1] > nValue){
 	               a[j] = a[j -1];
