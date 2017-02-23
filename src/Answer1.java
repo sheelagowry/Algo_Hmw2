@@ -110,22 +110,35 @@ public class Answer1 {
    public static void binaryInsertionSort(int[] a) {
       // TODO!!! Your method here!
 	
+	       int tmp;
+	       int l, r, m;
 	   
 	        for (int i = 1; i < a.length; i++) {
-	               int x = a[i];
-	                
-	               
-	               int j = Math.abs(a.length + 1);
-	                
-	               
-	               System.arraycopy(a, j, a, j+1, i-j);
-	                
-	               
-	               a[j] = x;
+	              tmp = a [i] ;
+	              l = 0;
+	              r = 0;
+	              while (l<r){
+	                   m=(l+r)/2;
+	                  if (tmp>=a[m])
+	                      l=r+1;
+	                  else
+	                       r=m;
+	              }
+	              for (int j = i; j > l; --j)
+	            	swap (a, j - 1, j);
+	            	  
 	        
+	            
    }
 }
-   /**
+   private static void swap(int a[], int i, int j) {
+	// TODO Auto-generated method stub
+	int k = a[i];
+	a[i]=a[j];
+	a[j]=k;
+}
+
+/**
     * Sort a part of the array using quicksort method.
     *
     * @param array
