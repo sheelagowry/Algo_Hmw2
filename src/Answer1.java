@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Comparison of sorting methods. The same array of non-negative int values is
@@ -30,6 +31,8 @@ public class Answer1 {
       }
       int rightLimit = MAX_SIZE / (int) Math.pow(2., NUMBER_OF_ROUNDS);
 
+      //insertionSort(origArray);
+      //binaryInsertionSort(origArray);
       // Start a competition
       for (int round = 0; round < NUMBER_OF_ROUNDS; round++) {
          int[] acopy;
@@ -109,27 +112,35 @@ public class Answer1 {
     */
    public static void binaryInsertionSort(int[] a) {
       // TODO!!! Your method here!
-	        
-	       int nValue, j;
-	     
+
+        for(int i = 1; i < a.length; i++){
+        	int tmp = a[i];
+        	int l = 0;
+        	int r = i;
+        
+        	while(l < r){
+        		   int m = (l+r)/2;
+    			   if (a[m]<=tmp)
+    				   l= m+1;
+    			   else
+    				   r = m;
+
+        	}
+     	   for(int j=i;j>l;--j){
+			   int s=a[j-1];
+			   a[j-1] = a[j];
+			   a[j] = s;
+		   }
+			
+        }
 	   
-	        for (int i = 1; i < a.length; i++) {
-	              nValue = a[i] ;
-	            //  nValue = a[i];
-	              j = i;
-	              while (j > 0 && a [j - 1] > nValue){
-	               a[j] = a[j -1];
-	               j--;
-	              }
-	              a[j]= nValue;
-	        }
-	            	  
 	        
-	            
+	 	   
    }
+   
+   
 
-
-/**
+   /**
     * Sort a part of the array using quicksort method.
     *
     * @param array
