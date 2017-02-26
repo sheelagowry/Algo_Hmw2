@@ -12,7 +12,7 @@ import java.util.Random;
 public class Answer1 {
 
    /** maximal array length */
-   static final int MAX_SIZE = 50000;
+   static final int MAX_SIZE = 100000;
 
    /** number of competition rounds */
    static final int NUMBER_OF_ROUNDS = 4;
@@ -126,13 +126,14 @@ public class Answer1 {
     				   r = m;
 
         	}
-     	   for(int j=i;j>l;--j){
-			   int s=a[j-1];
-			   a[j-1] = a[j];
-			   a[j] = s;
+        	int j = Math.abs(Arrays.binarySearch(a,  0, i, tmp) + 1);
+        	
+        	System.arraycopy(a, j, a, j+1, i-j);
+     	 
+			   a[j] = tmp;
 		   }
 			
-        }
+        
 	   
 	        
 	 	   
